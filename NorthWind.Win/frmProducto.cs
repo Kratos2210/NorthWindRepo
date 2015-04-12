@@ -13,8 +13,16 @@ namespace NorthWind.Win
 {
     
     public partial class frmProducto : Form
+
     {
+        public event EventHandler<TbProductoBE> onProductoSeleccionado;
+       
         List<TbProductoBE> Lista = new List<TbProductoBE>();
+        
+
+
+       
+
         public frmProducto()
         {
             InitializeComponent();
@@ -28,5 +36,38 @@ namespace NorthWind.Win
                 DataGridViewSelectionMode.FullRowSelect;
 
         }
+
+        private void AgregarProductoFactura()
+        {
+            int i = dataGridView1.CurrentRow.Index;
+            string codigoProducto= dataGridView1.Rows[i].Cells[0].Value.ToString();
+            TbProductoBE oProducto = (from item in Lista.ToArray()
+                                     where item.CodProducto == codigoProducto
+                                     select item).Single();
+            onProductoSeleccionado(new object(), oProducto);
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AgregarProductoFactura();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Return)
+            {
+                AgregarProductoFactura();
+            }
+
+        }
+
+
+
     }
 }
