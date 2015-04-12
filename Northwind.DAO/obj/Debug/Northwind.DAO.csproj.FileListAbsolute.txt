@@ -1,0 +1,7 @@
+C:\northwind\Northwind.DAO\bin\Debug\Northwind.DAO.dll
+C:\northwind\Northwind.DAO\bin\Debug\Northwind.DAO.pdb
+C:\northwind\Northwind.DAO\bin\Debug\NorthWind.Entity.dll
+C:\northwind\Northwind.DAO\bin\Debug\NorthWind.Entity.pdb
+C:\northwind\Northwind.DAO\obj\Debug\Northwind.DAO.csprojResolveAssemblyReference.cache
+C:\northwind\Northwind.DAO\obj\Debug\Northwind.DAO.dll
+C:\northwind\Northwind.DAO\obj\Debug\Northwind.DAO.pdb
